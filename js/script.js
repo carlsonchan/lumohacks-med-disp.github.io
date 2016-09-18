@@ -2,6 +2,7 @@ var DOSAGEPUTURL = "https://lumohacks-med-disp.firebaseio.com/patients/197214/do
 var ALERTPUT = "https://lumohacks-med-disp.firebaseio.com/patients/197214/alert.json";
 
 var PATIENTSURL = "https://lumohacks-med-disp.firebaseio.com/patients.json"
+var NEXTDISPENSEURL = "https://lumohacks-med-disp.firebaseio.com/patients/197214/nextDispense.json"
 
 
 
@@ -41,6 +42,8 @@ $(document).ready(function() {
 			hiddenRow.find('.n-dosage').text(data[i].dosage)
 			hiddenRow.find('.dosageInput').val(data[i].dosage)
 			hiddenRow.find('.collapse').attr("id", i);
+			var nextDosageSecs = Math.round(data[i].nextDispense - (Date.now()/1000));
+			hiddenRow.find('.next-dosage').text(nextDosageSecs < 0 ? 0 : nextDosageSecs);
 
 			patientRow.attr('id',"");
 			hiddenRow.attr('id',"");
@@ -71,6 +74,17 @@ $(document).ready(function() {
 				})
 			})
 		})
+
+	})
+	$.get({
+		url:NEXTDISPENSEURL
+	}).done(function(data){
+		console.log("Dispense Data: ", data);
+		console.log("Current time ", Date.now());
+		var timeDifference = (Date.now()/1000) - data;
+		// Next dispense time
+		console.log("Time difference ", timeDifference);
+
 
 	})
 });
