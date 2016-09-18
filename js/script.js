@@ -6,14 +6,6 @@ var PATIENTSURL = "https://lumohacks-med-disp.firebaseio.com/patients.json"
 
 
 $(document).ready(function() {
-	function updateCurrentDosage(){
-    	document.getElementById('msg').innerText = document.getElementById('dosageInput').value;
-	}
-	$('#dosageInput').click(function(){
-		updateCurrentDosage();
-	})
-
-
   $('expand tr').each(function(){
       $(this).click(function(){
           $(this).siblings('tr').slideToggle(300);
@@ -23,22 +15,19 @@ $(document).ready(function() {
 		url: PATIENTSURL
 	}).done(function (data) {
 		console.log("Data: ", data);
-		var patientRow = $('#dummy-patient-row').clone();
-		var hiddenRow = $('#dummy-hidden-row').clone();
-
 		for (i in data){
-
-			hiddenRow.data('patient-data',data[i]);
 			var patientRow = $('#dummy-patient-row').clone();
 			var hiddenRow = $('#dummy-hidden-row').clone();
+			hiddenRow.data('patient-data',data[i]);
 			patientRow.attr('href',"#".concat(i));
 			patientRow.attr('aria-controls',i);
 			patientRow.find('.patient-id').text(i)
 			patientRow.find('.patient-name').text(data[i].name)
 			patientRow.find('.patient-nMedication').text(data[i].dosage)
 
-			var correspondingCollapse = hiddenRow.find('.collapse');
-			correspondingCollapse.attr("id", i);
+			hiddenRow.find('.n-dosage').text(data[i].dosage)
+			hiddenRow.find('.dosageInput').val(data[i].dosage)
+			hiddenRow.find('.collapse').attr("id", i);
 
 			patientRow.attr('id',"");
 			hiddenRow.attr('id',"");
@@ -46,7 +35,12 @@ $(document).ready(function() {
 			$('#patient_data > tbody').append(hiddenRow)
 
 		}
-
+		// Input onchange
+		$('.dosageInput').change( function(e){
+			e.preventDefault();
+			$(this).parents('.patient-subdata').find('.n-dosage').text($(this).val())
+			// $('msg').innerText = document.getElementById('dosageInput').value;
+		})
 		// Done appending; attach click functions
 		$('.dosageDispense').on('click', function(e){
 			e.preventDefault();
