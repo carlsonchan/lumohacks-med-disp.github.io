@@ -1,5 +1,6 @@
 var DOSAGEPUTURL = "https://lumohacks-med-disp.firebaseio.com/patients/197214/dosage.json";
 var ALERTPUT = "https://lumohacks-med-disp.firebaseio.com/patients/197214/alert.json";
+var DOSAGEPERDAYURL="https://lumohacks-med-disp.firebaseio.com/patients/197214/dosesPerDay.json"
 
 var PATIENTSURL = "https://lumohacks-med-disp.firebaseio.com/patients.json"
 var NEXTDISPENSEURL = "https://lumohacks-med-disp.firebaseio.com/patients/197214/nextDispense.json"
@@ -38,10 +39,14 @@ $(document).ready(function() {
 				patientRow.css('background-color','#FFFFFF')
 
 			}
+			console.log(data[i])
+			hiddenRow.find('.n-dosage').text(data[i].dosesPerDay)
+			hiddenRow.find('.dosageInput').val(data[i].dosesPerDay)
 
-			hiddenRow.find('.n-dosage').text(data[i].dosage)
-			hiddenRow.find('.dosageInput').val(data[i].dosage)
+			hiddenRow.find('.p-dosage').text(data[i].dosage)
+			hiddenRow.find('.pillDosageInput').val(data[i].dosage)
 			hiddenRow.find('.collapse').attr("id", i);
+
 			var nextDosageSecs = Math.round(data[i].nextDispense - (Date.now()/1000));
 			hiddenRow.find('.next-dosage').text(nextDosageSecs < 0 ? 0 : nextDosageSecs);
 
@@ -62,16 +67,42 @@ $(document).ready(function() {
 			e.preventDefault();
 			$.ajax({
 				method: "PUT",
-				url: DOSAGEPUTURL,
-				data: $(this).prevAll('input').val()
+				url: DOSAGEPERDAYURL,
+				data: $(this).prevAll('input.dosageInput').val()
 			}).done(function(data){
-				$.ajax({
-					method: "PUT",
-					url: ALERTPUT,
-					data: "true"
-				}).done(function(data){
-					alert("Dosage Dispensed");
-				})
+				alert('Dosage per day updated')
+				// $.ajax({
+				// 	method: "PUT",
+				// 	url: ALERTPUT,
+				// 	data: "true"
+				// }).done(function(data){
+				// 	alert("Dosage Dispensed");
+				// })
+			})
+		})
+		// Input onchange
+		$('.pillDosageInput').change( function(e){
+			e.preventDefault();
+			$(this).parents('.patient-subdata').find('.p-dosage').text($(this).val())
+			// $('msg').innerText = document.getElementById('dosageInput').value;
+		})
+		// Done appending; attach click functions
+		$('.pillDosageDispense').on('click', function(e){
+			e.preventDefault();
+			$.ajax({
+				method: "PUT",
+				url: DOSAGEPUTURL,
+				data: $(this).prevAll('input.pillDosageInput').val()
+			}).done(function(data){
+				alert('Pills per dosage updated')
+
+				// $.ajax({
+				// 	method: "PUT",
+				// 	url: ALERTPUT,
+				// 	data: "true"
+				// }).done(function(data){
+				// 	alert("Dosage Dispensed");
+				// })
 			})
 		})
 

@@ -77,17 +77,25 @@
                           <h4>Hydrocodone</h4>
                         </td>
                         <td>
-                          <h4>Current dosage is: <span class="n-dosage"></span></h4>
+                          <h4>Current pill per dosage is: <span class="p-dosage"></span></h4>
                           <form>
-                            Quantity (between 1 and 5):
-                            <input type="number" name="dosage" class="dosageInput" min="1" max="5" >
+                            Quantity:
+                            <input type="number" name="dosage" class="pillDosageInput" min="1" max="5">
                             <br />
-                            <button class="dosageDispense">Dispense</button>
+                            <button class="pillDosageDispense">Update</button>
+                          </form>
+                        </td>
+                        <td>
+                          <h4>Current dosage per day: <span class="n-dosage"></span></h4>
+                          <form>
+                            Quantity (1-5):
+                            <input type="number" name="dosage" class="dosageInput" min="1">
+                            <br />
+                            <button class="dosageDispense">Update</button>
                           </form>
                         </td>
                         <td>
                         <h4>Next dosage in (sec) : <span class="next-dosage"></span></h4>
-                          <!--<p>Last Updated date</p>-->
                         </td>
                       </tr>
                     </tbody>
