@@ -62,6 +62,19 @@ $(document).ready(function() {
 			$(this).parents('.patient-subdata').find('.n-dosage').text($(this).val())
 			// $('msg').innerText = document.getElementById('dosageInput').value;
 		})
+		$('.dosageInput').on('keypress', function (e) {
+			if (e.keyCode == 13){
+				e.preventDefault();
+				$.ajax({
+					method: "PUT",
+					url: DOSAGEPERDAYURL,
+					data: $(this).val()
+				}).done(function(data){
+					alert('Dosage per day updated')
+				})
+			};
+			return true;
+		})
 		// Done appending; attach click functions
 		$('.dosageDispense').on('click', function(e){
 			e.preventDefault();
@@ -71,13 +84,6 @@ $(document).ready(function() {
 				data: $(this).prevAll('input.dosageInput').val()
 			}).done(function(data){
 				alert('Dosage per day updated')
-				// $.ajax({
-				// 	method: "PUT",
-				// 	url: ALERTPUT,
-				// 	data: "true"
-				// }).done(function(data){
-				// 	alert("Dosage Dispensed");
-				// })
 			})
 		})
 		// Input onchange
@@ -85,6 +91,19 @@ $(document).ready(function() {
 			e.preventDefault();
 			$(this).parents('.patient-subdata').find('.p-dosage').text($(this).val())
 			// $('msg').innerText = document.getElementById('dosageInput').value;
+		})
+		$('.pillDosageInput').on('keypress', function (e) {
+			if (e.keyCode == 13){
+				e.preventDefault();
+				$.ajax({
+					method: "PUT",
+					url: DOSAGEPUTURL,
+					data: $(this).val()
+				}).done(function(data){
+					alert('Pills per dosage updated')
+				})
+			};
+			return true;
 		})
 		// Done appending; attach click functions
 		$('.pillDosageDispense').on('click', function(e){
