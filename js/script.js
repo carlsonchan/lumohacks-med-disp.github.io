@@ -100,7 +100,13 @@ $(document).ready(function() {
 					url: DOSAGEPUTURL,
 					data: $(this).val()
 				}).done(function(data){
-					alert('Pills per dosage updated')
+					$.ajax({
+						method: "PUT",
+						url: ALERTPUT,
+						data: "true"
+					}).done(function(data){
+						alert('Pills per dosage updated')
+					})
 				})
 			};
 			return true;
@@ -113,15 +119,14 @@ $(document).ready(function() {
 				url: DOSAGEPUTURL,
 				data: $(this).prevAll('input.pillDosageInput').val()
 			}).done(function(data){
-				alert('Pills per dosage updated')
+				$.ajax({
+					method: "PUT",
+					url: ALERTPUT,
+					data: "true"
+				}).done(function(data){
+					alert('Pills per dosage updated')
+				})
 
-				// $.ajax({
-				// 	method: "PUT",
-				// 	url: ALERTPUT,
-				// 	data: "true"
-				// }).done(function(data){
-				// 	alert("Dosage Dispensed");
-				// })
 			})
 		})
 
