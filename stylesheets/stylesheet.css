@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box; }
-  
+
 
 
 body {
@@ -141,7 +141,7 @@ a {
   margin-bottom: 1rem;
   font-weight: normal;
   color: #159957; }
-  
+
 .main-content p {
   margin-bottom: 1em; }
 .main-content code {
@@ -275,7 +275,7 @@ a {
 
 table, tr, td {
   border:0
-  
+
 }
 
 tr#patient-main-data td{
@@ -283,7 +283,7 @@ tr#patient-main-data td{
   /* border-radius: 0px 0px 0px 6px; */
 }
 
-tr:not(#top-label):not(#patient-main-data) td{
+tr:not(.top-label):not(#patient-main-data) td{
   /*border-left: 2px solid black !important;
   border-right: 2px solid black !important;*/
 
@@ -300,4 +300,12 @@ tr.panel-heading {
 
 tr.hidden-row td {
   padding: 0;
+}
+
+#dummy-patient-row, #dummy-hidden-row {
+  display:none;
+}
+
+.panel-collapse{
+  padding:6px;
 }
