@@ -20,7 +20,7 @@ $(document).ready(function() {
 			console.log("js: " + js)
 			console.log("js%2: " + js%2)
 			console.log("js%2===0: " , (js%2)===0)
-			if(js%2===1){
+			if(js%2===0){
 				var patientRow = $('#dummy-patient-row2').clone();
 			}else{
 				var patientRow = $('#dummy-patient-row').clone();
