@@ -20,11 +20,11 @@ $(document).ready(function() {
 			console.log("js: " + js)
 			console.log("js%2: " + js%2)
 			console.log("js%2===0: " , (js%2)===0)
-			if(js%2===0){
-				var patientRow = $('#dummy-patient-row2').clone();
-			}else{
+			// if(js%2===0){
+				// var patientRow = $('#dummy-patient-row2').clone();
+			// }else{
 				var patientRow = $('#dummy-patient-row').clone();
-			}
+			// }
 			js++
 			var hiddenRow = $('#dummy-hidden-row').clone();
 			hiddenRow.data('patient-data',data[i]);
@@ -33,6 +33,10 @@ $(document).ready(function() {
 			patientRow.find('.patient-id').text(i)
 			patientRow.find('.patient-name').text(data[i].name)
 			patientRow.find('.patient-nMedication').text(data[i].dosage)
+			if(js%2===1){
+				patientRow.css('background-color','#FFFFFF')
+
+			}
 
 			hiddenRow.find('.n-dosage').text(data[i].dosage)
 			hiddenRow.find('.dosageInput').val(data[i].dosage)
