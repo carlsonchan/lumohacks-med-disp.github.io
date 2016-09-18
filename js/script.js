@@ -34,7 +34,7 @@ $(document).ready(function() {
 			patientRow.attr('aria-controls',i);
 			patientRow.find('.patient-id').text(i)
 			patientRow.find('.patient-name').text(data[i].name)
-			patientRow.find('.patient-nMedication').text(data[i].dosage)
+			patientRow.find('.patient-nMedication').text(1)
 			if(js%2===1){
 				patientRow.css('background-color','#FFFFFF')
 
