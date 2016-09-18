@@ -1,5 +1,5 @@
-var DOSAGEPUTURL = "https://lumohacks-med-disp.firebaseio.com/patients/jeffrey_leung/dosage.json";
-var ALERTPUT = "https://lumohacks-med-disp.firebaseio.com/patients/jeffrey_leung/alert.json";
+var DOSAGEPUTURL = "https://lumohacks-med-disp.firebaseio.com/patients/197214/dosage.json";
+var ALERTPUT = "https://lumohacks-med-disp.firebaseio.com/patients/197214/alert.json";
 
 var PATIENTSURL = "https://lumohacks-med-disp.firebaseio.com/patients.json"
 
