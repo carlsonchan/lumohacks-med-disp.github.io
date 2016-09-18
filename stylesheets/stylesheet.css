@@ -205,7 +205,7 @@ a {
     font-weight: bold; }
   .main-content table th, .main-content table td {
     padding: 0.5rem 1rem;
-    border: 1px solid #e9ebec; }
+    }
 .main-content dl {
   padding: 0; }
   .main-content dl dt {
@@ -263,3 +263,21 @@ a {
 @media screen and (max-width: 42em) {
   .site-footer {
     font-size: 0.9rem; } }
+
+
+table, tr, td {
+  border:0
+  
+}
+
+tr#patient-main-data td{
+  border-bottom: 2px solid black !important;
+  /* border-radius: 0px 0px 0px 6px; */
+}
+
+tr:not(#top-label):not(#patient-main-data) td{
+  border-left: 2px solid black !important;
+  border-right: 2px solid black !important;
+
+}
+
