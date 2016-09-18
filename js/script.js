@@ -15,8 +15,17 @@ $(document).ready(function() {
 		url: PATIENTSURL
 	}).done(function (data) {
 		console.log("Data: ", data);
+	 	var js = 1
 		for (i in data){
-			var patientRow = $('#dummy-patient-row').clone();
+			console.log("js: " + js)
+			console.log("js%2: " + js%2)
+			console.log("js%2===0: " , (js%2)===0)
+			if(js%2===1){
+				var patientRow = $('#dummy-patient-row2').clone();
+			}else{
+				var patientRow = $('#dummy-patient-row').clone();
+			}
+			js++
 			var hiddenRow = $('#dummy-hidden-row').clone();
 			hiddenRow.data('patient-data',data[i]);
 			patientRow.attr('href',"#".concat(i));

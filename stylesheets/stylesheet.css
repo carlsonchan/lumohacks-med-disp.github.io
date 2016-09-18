@@ -105,7 +105,7 @@ a {
 
 @media screen and (min-width: 64em) {
   .project-name {
-    font-size: 7rem; } }
+    font-size: 6.5rem; } }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .project-name {
@@ -291,11 +291,15 @@ tr:not(.top-label):not(#patient-main-data) td{
 
 .container-people{
     align-items: center;
-    margin-top: 200px;
+    margin-top: 225px;
 }
 
 tr.panel-heading {
   background: #f5f5f5;
+}
+
+tr.panel-heading-2 {
+  background: #ffffff;
 }
 
 tr.hidden-row td {

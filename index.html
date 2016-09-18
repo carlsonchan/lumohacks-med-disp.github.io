@@ -17,12 +17,12 @@
 <body>
   <div class="page-header">
     <h1 class="project-name">Medical Dispenser Dashboard</h1>
-    <h2 class="project-tagline"></h2>
+    <h2 class="project-tagline">Medical History, Personal Info, Dosage Usage</h2>
   </div>
 
   <div class="container" align="center">
     <div class="container-people">
-      <h3 align="center">medical history, personal information, list of medication dosage last updated</h3>
+      <h3 align="center"></h3>
       <h2>Collapsible Panel</h2>
       <p>Learn more about the patient by clicking on their patient ID, Name or Number of medication.
         You can easily adjust the patient's medication dosage by adjusting the quantity.</p>
@@ -46,6 +46,13 @@
             <th>Number of medication</th>
           </tr>
           <tr class="panel-heading patient-row" id="dummy-patient-row"
+              data-toggle="collapse" href="#collapse" aria-expanded="false"
+              aria-controls="collapse1">
+            <td class="patient-id"></td>
+            <td class="patient-name"></td>
+            <td class="patient-nMedication"></td>
+          </tr>
+          <tr class="panel-heading-2" id="dummy-patient-row2"
               data-toggle="collapse" href="#collapse" aria-expanded="false"
               aria-controls="collapse1">
             <td class="patient-id"></td>
