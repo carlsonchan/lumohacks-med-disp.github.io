@@ -204,15 +204,14 @@ a {
     margin-top: 0; }
   .main-content blockquote > :last-child {
     margin-bottom: 0; }
-.main-content table {
-  display: block;
+.container table {
   width: 100%;
   overflow: auto;
   word-break: normal;
   word-break: keep-all; }
-  .main-content table th {
+  .container table th {
     font-weight: bold; }
-  .main-content table th, .main-content table td {
+  .container table th, .container table td {
     padding: 0.5rem 1rem;
     }
 .main-content dl {
@@ -240,7 +239,7 @@ a {
     font-size: 1.1rem; } }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
-  .main-content {
+  .container {
     padding: 2rem 4rem;
     font-size: 1.1rem; } }
 
@@ -280,17 +279,25 @@ table, tr, td {
 }
 
 tr#patient-main-data td{
-  border-bottom: 2px solid black !important;
+  /*border-bottom: 2px solid black !important;*/
   /* border-radius: 0px 0px 0px 6px; */
 }
 
 tr:not(#top-label):not(#patient-main-data) td{
-  border-left: 2px solid black !important;
-  border-right: 2px solid black !important;
+  /*border-left: 2px solid black !important;
+  border-right: 2px solid black !important;*/
 
 }
 
 .container-people{
     align-items: center;
     margin-top: 200px;
+}
+
+tr.panel-heading {
+  background: #f5f5f5;
+}
+
+tr.hidden-row td {
+  padding: 0;
 }
