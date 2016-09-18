@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box; }
+  
+
 
 body {
   background-image: url("./images/shattered.png");
@@ -10,8 +12,8 @@ body {
   }
 
 .container {
-background-image: url("./images/shattered.png");
-  background-attachment: fixed; }
+  background-color: #fff;
+}
 
 a {
   color: #1e6bb8;
@@ -66,12 +68,18 @@ a {
 }
 
 .page-header {
+  position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
   color: #fff;
   text-align: center;
   background-color: #159957;
   background-image: linear-gradient(120deg, #155799, #159957);
   height: 200px;
-  
+  margin-top: 0px !important;
+  line-height: 1.5;
+
  }
 
 
@@ -97,7 +105,7 @@ a {
 
 @media screen and (min-width: 64em) {
   .project-name {
-    font-size: 3.25rem; } }
+    font-size: 7rem; } }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .project-name {
@@ -128,11 +136,12 @@ a {
   margin-top: 0; }
 .main-content img {
   max-width: 100%; }
-.main-content h1, .main-content h2, .main-content h3, .main-content h4, .main-content h5, .main-content h6 {
+.container h1, .container h2, .container h3, .container h4, .container h5, .container h6 {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: normal;
   color: #159957; }
+  
 .main-content p {
   margin-bottom: 1em; }
 .main-content code {
@@ -281,3 +290,7 @@ tr:not(#top-label):not(#patient-main-data) td{
 
 }
 
+.container-people{
+    align-items: center;
+    margin-top: 200px;
+}
