@@ -2,12 +2,16 @@
   box-sizing: border-box; }
 
 body {
-  padding: 0;
-  margin: 0;
+  background-image: url("./images/shattered.png");
+  background-attachment: fixed;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #606c71; }
+  }
+
+.container {
+background-image: url("./images/shattered.png");
+  background-attachment: fixed; }
 
 a {
   color: #1e6bb8;
@@ -53,11 +57,27 @@ a {
       margin-top: 1rem;
       margin-left: 0; } }
 
+.header {
+    position: fixed;
+    width: 100%;
+    height: 200px;
+    top: 0;
+    z-index: 1;
+}
+
 .page-header {
   color: #fff;
   text-align: center;
   background-color: #159957;
-  background-image: linear-gradient(120deg, #155799, #159957); }
+  background-image: linear-gradient(120deg, #155799, #159957);
+  height: 200px;
+  
+ }
+
+
+.body{
+  margin-top: 200px;
+}
 
 @media screen and (min-width: 64em) {
   .page-header {
