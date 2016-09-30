@@ -133,13 +133,13 @@ $(document).ready(function() {
 	})
 	$.get({
 		url:NEXTDISPENSEURL
-	}).done(function(data){
-		console.log("Dispense Data: ", data);
-		console.log("Current time ", Date.now());
-		var timeDifference = (Date.now()/1000) - data;
-		// Next dispense time
-		console.log("Time difference ", timeDifference);
-
-
 	})
+  .done(function(data){
+  		console.log("Dispense Data: ", data);
+  		console.log("Current time ", Date.now());
+  		var timeDifference = (Date.now()/1000) - data;
+  		// Next dispense time
+  		console.log("Time difference ", timeDifference);
+	})
+  $('#tabs').tabs();
 });

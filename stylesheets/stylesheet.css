@@ -80,6 +80,7 @@ a {
   height: 200px;
   margin-top: 0px !important;
   line-height: 1.5;
+  margin-bottom: 0 !important;
 
  }
 
@@ -289,10 +290,11 @@ tr:not(.top-label):not(#patient-main-data) td{
   border-right: 2px solid black !important;*/
 
 }
-
-.container-people{
+.container{
+  margin-top: 200px;
+}
+#container-people{
     align-items: center;
-    margin-top: 225px;
 }
 
 tr.panel-heading {
@@ -314,3 +316,40 @@ tr.hidden-row td {
 .panel-collapse{
   padding:6px;
 }
+
+.tabs{
+  background: none;
+  border: 0;
+}
+#tabs ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+#tabs ul li{
+  flex-grow: 1;
+  margin: 0;
+  border: 0;
+  
+}
+#tabs ul li.ui-state-active{
+  background: #159957;
+  border: 0;
+}
+
+#tabs ul li a{
+  width: 100%
+}
+#tabs ul::before{
+  /* Weird hack to override jQuery UI's tab:before */
+  display: flex;
+}
+
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr{
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+
+/* Tabbed content */
+.tabbed {min-height: 300px}
