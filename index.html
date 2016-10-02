@@ -35,7 +35,7 @@
       </p>
       <h1>Creators</h1>
       <p>
-        The creators of this project are <a href="https://github.com/KieranMcCormick">Kieran McCormick</a>, <a href="https://github.com/eul721">Jack Chao</a>, <a href="https://github.com/Brad1321">Bradley Dalrymple</a>, <a href="https://github.com/carlsonchan">Carlson Chan</a>, and <a href="https://github.com/jleung51">Jeffrey Leung</a>.
+        The creators of this project are <a href="https://github.com/Brad1321">Bradley Dalrymple</a>, <a href="https://github.com/jleung51">Jeffrey Leung</a>, <a href="https://github.com/carlsonchan">Carlson Chan</a>, <a href="https://github.com/KieranMcCormick">Kieran McCormick</a>, and <a href="https://github.com/eul721">Jack Chao</a>.
       </p>
       <h1>Vision</h1>
       <p>
@@ -47,6 +47,21 @@
       <h1>Solution and Implementation</h1>
       <p>
         As our response to this issue, we designed, architected, and implemented a fully-working prototype with a complete full-stack solution consisting of a dynamic webpage, an online database, and a custom-built, partially 3-d printed hardware medicine dispenser.
+      </p>
+      <h2>Web Application</h2>
+      <p>
+        In order to give doctors the ability to configure and reschedule a patient's dosages we created a web application designed to be quick, intuitive, and easy to use. In the application, each patient is identified by their <em>patient ID</em>, an arbitrary and unique value. The medical history and number of current medications is displayed for context. Each medication currently prescribed to a given patient is described with its name, pills per dosage, dosages per day, and next dosage dispensal time, and the doctor can freely configure the values for the pills per dosage and dosages per day.
+      </p>
+      <p>
+        Click the <em>Patients</em> tab above to use the live web application. The time until the next dosage dispensal is only usable in an accurate fashion when paired with the running dispenser program, so it is not currently functional.
+      </p>
+      <h2>Database</h2>
+      <p>
+        To share patient data from the web application to the dispenser, we used a <a href="http://firebase.google.com/">Google Firebase</a> database. This allowed us significant control over the structure and type of data that we could use and manipulate. You can view the raw data in JSON form by clicking <a href="https://lumohacks-med-disp.firebaseio.com/patients.json">here</a>.
+      </p>
+      <h2>Dispenser (Hardware)</h2>
+      <p>
+        As an emergency measure, we also provided a button which the patient can press to dispense their usual dosage, in case of a failure or disconnection in the system.
       </p>
       <h4>Disclaimer</h4>
       <p>
