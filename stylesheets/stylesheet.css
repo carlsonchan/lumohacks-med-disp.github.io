@@ -21,6 +21,10 @@ a {
   a:hover {
     text-decoration: underline; }
 
+.tabbed a {
+  color: Navy;
+}
+
 .btn {
   display: inline-block;
   margin-bottom: 1rem;
@@ -330,7 +334,7 @@ tr.hidden-row td {
   flex-grow: 1;
   margin: 0;
   border: 0;
-  
+
 }
 #tabs ul li.ui-state-active{
   background: #159957;
